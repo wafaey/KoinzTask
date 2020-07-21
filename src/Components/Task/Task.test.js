@@ -1,9 +1,11 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import Task from './Task'
 
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
+import '@testing-library/jest-dom'
+afterEach(cleanup);
   const initialState = {
     todoList: [],
     progressList: [],
@@ -15,28 +17,19 @@ import configureStore from 'redux-mock-store'
       store = mockStore(initialState)
       const { getByTestId } = render(<Provider store={store}><Task /></Provider>)
         });
+      it('should have a view button', () => {
+      const { getByTestId } = render(<button className='view'>View</button>)
+      expect(getByTestId("button-view")).toHaveTextContent('View');
+       // expect(wrapper.find('edit')).toEqual(1);
+      });
+      it('should have an edit button', () => {
+        const { getByTestId } = render(<button>Edit</button>)
+        expect(getByTestId("button-edit")).toHaveTextContent('Edit');
+        // expect(wrapper.find('edit')).toEqual(1);
+      });
+      it('should have a delete button', () => {
+        const { getByTestId } = render(<button>Delete</button>)
+        expect(getByTestId("button-delete")).toHaveTextContent('Delete');
 
-
-
-//       it('should match the snapshot', () => {
-//         store = mockStore(initialState)
-//         const { getByTestId } = render(<Provider store={store}><Task /></Provider>)
-//         expect(getByText('Drag and Drop')).not.toBeNull()
-//         expect(wrapper.html()).toMatchSnapshot();
-//       });
-//       it('should have an Edit button', () => {
-//         expect(wrapper.find('edit')).toEqual(1);
-//       });
-//       it('should have an Delete button', () => {
-//         expect(wrapper.find('delete')).toEqual(1);
-//       });
-//       it('should have an text area', () => {
-//         expect(wrapper.find('mark')).toEqual(1);
-//       });
-//   it('Shows "Drag and Drop"', () => {
-//     store = mockStore(initialState)
-//     const { getByText } = render(<Provider store={store}><Task /></Provider>)
-
-//     expect(getByText('Drag and Drop')).not.toBeNull()
-//   })
-// })
+        //expect(wrapper.find('edit')).toEqual(1);
+      });
