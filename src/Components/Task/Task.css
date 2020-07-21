@@ -1,0 +1,137 @@
+.Task{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 20px;
+    margin: 4%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.2 linear;
+}
+.content{
+    width: 70%;
+    border-bottom-style: solid;
+    border-width: medium;
+    margin: 3%;
+}
+.options{
+    width: 100%;
+    margin: 3%;
+}
+.edit{
+    background-color: #403b52;
+    width: 30%;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.delete{
+    background-color: #da5d5d;
+    width: 30%;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.view{
+  background-color: #33be7d;
+  width: 30%;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.modal-edit {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content-edit {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  .close-edit {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-edit:hover,
+  .close-edit:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-view {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content-view {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .modal-content-view h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95%;
+   overflow-y: scroll;
+  }
+  .modal-content-view h5{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95%;
+    overflow-y: scroll;
+  }
